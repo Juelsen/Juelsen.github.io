@@ -1,8 +1,10 @@
 <div class="wrapper">
     <div class="flex-item text-wrapper">
-        <p class="text">Konzentriere dich nur auf die Geräusche</p>
+        <p *ngIf="countdownSig() > 0" class="text">Konzentriere dich nur auf die Geräusche</p>
+        <p *ngIf="countdownSig() <= 0" class="text">Jetzt bist du bereit, die Website zu besuchen</p>
+        <button *ngIf="countdownSig() <= 0" class="custom-button">Los gehts</button>
     </div>
     <div class="flex-item countdown-wrapper">
-        <p class="countdown-text">{{ (countdown$ | async) ?? 20 }}</p>
+        <p class="countdown-text">{{ countdownSig() }}</p>
     </div>
 </div>
