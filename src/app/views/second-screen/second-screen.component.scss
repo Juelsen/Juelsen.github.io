@@ -1,0 +1,38 @@
+@import '../../../styles.scss';
+
+.wrapper {
+    margin: 8.75rem;
+    display: flex;
+    height: calc(100dvh - 17.5rem);
+}
+
+.flex-item {
+    flex: 1;
+}
+
+.text-wrapper {
+    margin-top: auto;
+    margin-bottom: 10rem;
+}
+
+.text {
+    font-family: 'NeueHaasDisplayLight';
+    font-size: 2rem;
+    color: $color-white;
+}
+
+.countdown-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.countdown-text {
+    margin-top: auto;
+    font-family: 'PPEditorialNew';
+    font-style: italic;
+    font-size: 6.25rem;
+    color: $color-white;
+    margin-bottom: 0;
+}
