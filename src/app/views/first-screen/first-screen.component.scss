@@ -1,0 +1,27 @@
+@import '../../../styles.scss';
+
+.wrapper {
+    display: flex;
+    overflow-y: hidden;
+}
+
+.flex-item-text {
+    flex: 40%;
+    align-items: center;
+}
+
+.flex-item-image {
+    flex: 60%;
+}
+
+.fire-image {
+    max-height: 100dvh;
+    object-fit: cover;
+}
+
+.text {
+    font-family: 'PPEditorialNew';
+    font-size: 100px;
+    color: $color-white;
+    margin: 8.75rem;
+}

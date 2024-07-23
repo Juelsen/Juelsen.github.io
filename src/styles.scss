@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+$color-orange: #FFA726;
+$color-white: #FAFAFA;
+$color-grey: #222222;
+$color-black: #101010;
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: $color-black;
+}
+
+@font-face {
+    font-family: 'NeueHaasDisplayLight';
+    src: url('assets/fonts/NeueHaasDisplayLight.ttf');
+}
+
+@font-face {
+    font-family: 'PPEditorialNew';
+    src: url('assets/fonts/PPEditorialNew-Italic.otf');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'PPEditorialNew';
+    src: url('assets/fonts/PPEditorialNew-Regular.otf');
+    font-style: normal;
+}
+
+.custom-button {
+    border-radius: 999px;
+    background-color: $color-orange;
+    color: $color-white;
+    font-size: 30px;
+    font-family: 'NeueHaasDisplayLight';
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    text-align: center;
+    font-weight: 900;
+    letter-spacing: 2px;
+    outline: none;
+    border: none;
+}
