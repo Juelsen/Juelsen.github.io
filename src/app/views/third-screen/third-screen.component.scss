@@ -1,5 +1,10 @@
 @import '../../../styles.scss';
 
+.wrapper {
+    background-color: $color-grey;
+    border: 1px solid $color-grey; // braucht man. Kp warum.
+}
+
 .item-wrapper {
     margin: 8.75rem;
     display: flex;
@@ -66,6 +71,39 @@
         border-radius: 1rem;
     }
 }
+
+.third-part {
+    margin-top: 50rem;
+    background-color: white;
+    width: 80dvw;
+    height: 80dvh;
+}
+
+.fourth-part {
+    display: flex;
+
+    .left {
+        flex: 1;
+    }
+
+    .right {
+        margin-top: auto;
+        flex: 1;
+        text-align: right;
+    }
+}
+
+.fifth-part {
+    margin-right: 50%;
+}
+
+.ribbon-image {
+    height: 32rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    border-radius: 1rem;
+}
+
 
 
 /* Scrolling banner stuff */
