@@ -1,0 +1,111 @@
+@import '../../../styles.scss';
+
+.item-wrapper {
+    margin: 8.75rem;
+    display: flex;
+    height: calc(100dvh - 17.5rem);
+}
+
+.text {
+    font-family: 'PPEditorialNew';
+    font-size: 100px;
+    color: $color-white;
+}
+
+.text-secondary {
+    font-family: 'PPEditorialNew';
+    font-size: 50px;
+    color: $color-white;
+}
+
+.text-banner {
+    font-family: 'PPEditorialNew';
+    font-size: 3rem;
+    color: $color-white;
+}
+
+.text-paragraph {
+    font-family: 'NeueHaasDisplayLight';
+    font-size: 2rem;
+    color: $color-white;
+}
+
+.first-part {
+    display: flex;
+
+    .left {
+        flex: 1;
+    }
+
+    .right {
+        margin-top: auto;
+        flex: 1;
+        text-align: right;
+    }
+}
+
+.second-part {
+    display: flex;
+    .left {
+        flex: 50%;
+        margin-left: auto;
+        margin-top: 18rem;
+    }
+
+    .right {
+        margin-top: auto;
+        flex: 50%;
+        text-align: right;
+    }
+
+    .positive-image {
+        margin: 8rem;
+        max-width: calc(100% - 24rem);
+        object-fit: cover;
+        height: 80dvh;
+        border-radius: 1rem;
+    }
+}
+
+
+/* Scrolling banner stuff */
+.scrolling-banner {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    position: relative;
+}
+
+.scroll-left, .scroll-right {
+    display: inline-block;
+    padding: 10px 0;
+    white-space: nowrap;
+}
+
+.scroll-left {
+    animation: scroll-left 20s linear infinite;
+}
+
+.scroll-right {
+    animation: scroll-right 20s linear infinite;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes scroll-right {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
