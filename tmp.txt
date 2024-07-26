@@ -1,0 +1,88 @@
+    
+    <!-- Second part -->
+    <div class="second-part item-wrapper">
+        <div class="left">
+            <p class="text" style="font-style: italic;">Überschrift</p>
+            <p class="text-paragraph">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Die Entdeckung des
+                Feuers war für uns Menschen eine der wichtigsten Errungenschaften. Es ermöglichte uns ganz
+                neue Wege. Sei es zum Schutz vor wilden Tieren oder zum verarbeiten von Lebensmitteln und weiteren
+                Rohstoffen. Feuer ist heut zu Tage nicht mehr weg zu denken. Wir sind davon abhängig. Ohne Feuer könnten wir nicht
+                mehr leben. Und vor allem viele Dinge die wir lieben nicht mehr verzehren.
+            </p>
+        </div>
+        <div class="right">
+            <img class="positive-image" src="assets/images/positive_image.png">
+        </div>
+    </div>
+
+    <!-- Third part (Horizontal List) -->
+    <div class="third-part item-wrapper">
+        
+    </div>
+
+    <!-- Fourth part -->
+    <div class="fourth-part item-wrapper">
+        <p class="text left">
+            Aber <i>Feuer</i> und <i>Verzehr</i> bedeutet<br>
+            noch so viel mehr, als das an was du<br>
+            gerade denkst..
+        </p>
+        <p class="text-secondary right">Doch viele von uns haben dieses Wissen vergessen, ignorieren es oder ziehen sich
+            absichtlich aus der Verantwortung!</p>
+    </div>
+
+    <!-- Fifth part -->
+    <div class="fifth-part item-wrapper">
+        <div>
+            <p class="text" style="font-style: italic;">Denn das ist an was du eigentlich denken solltest:</p>
+            <p class="text-paragraph">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Lorem ipsum dolor
+                sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+                dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                Stet
+                clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+                amet,
+                consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.
+            </p>
+        </div>
+    </div>
+
+    <!-- Picture ribbon -->
+    <div class="scrolling-banner">
+        <div class="text-banner scroll-left">
+            <img class="ribbon-image" src="assets/images/negative_1.png">
+            <img class="ribbon-image" src="assets/images/negative_2.png">
+            <img class="ribbon-image" src="assets/images/negative_3.png">
+            <img class="ribbon-image" src="assets/images/negative_4.png">
+            <img class="ribbon-image" src="assets/images/negative_5.png">
+        </div>
+    </div>
+
+    <!-- Fire Methods -->
+    <div class="horizontal-list-container">
+        <div class="horizontal-list">
+            <div *ngFor="let item of items; let i = index" class="list-item">
+                <ng-container *ngIf="i === 0; else cardTemplate">
+                    <div class="text-item">
+                        <h2>Swipe durch<br>lodernde Techniken!</h2>
+                    </div>
+                </ng-container>
+                <ng-template #cardTemplate>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="blue-container">Dein Text hier</div>
+                            <div class="blue-container small">{{i}}/8</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="content-left">
+                                <h3>Feuerbohren</h3>
+                                <p>Handbohrer und Bogenbohrer sind die Hauptmethoden beim Feuerbohren. Beim Handbohrer wird ein Holzstab zwischen den Händen gedreht und gegen ein Brett gedrückt, wodurch Reibung entsteht. Beim Bogenbohrer wird ein Bogen mit einer Schnur verwendet, um den Stab schneller zu drehen. Die Reibung erzeugt Hitze, die trockenen Zunder entzündet und somit Feuer erzeugt.</p>
+                            </div>
+                            <div class="content-right">
+                                <p>image</p>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+    </div>

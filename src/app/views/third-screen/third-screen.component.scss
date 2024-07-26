@@ -1,117 +1,263 @@
 @import '../../../styles.scss';
 
+$spacing: 5rem;
+
+/*--------------------------------------------------------------------*/
+/*Colors*/
+// .c1 {
+//     background-color: green;
+// }
+
+// .c2 {
+//     background-color: purple;
+// }
+
+// .c3 {
+//     background-color: brown;
+// }
+/*--------------------------------------------------------------------*/
+
+
+
 .wrapper {
     background-color: $color-grey;
-    border: 1px solid $color-grey; // braucht man. Kp warum.
 }
 
-.item-wrapper {
-    margin: 8.75rem;
-    display: flex;
-    height: calc(100dvh - 17.5rem);
+.restart-button {
+    position: fixed;
+    font-size: 1vw;
+    border-radius: 999px;
+    border: thin solid $color-orange !important;
+    background-color: $color-dark-grey;
+    color: $color-white;
+    font-family: 'NeueHaasDisplayLight';
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    text-align: center;
+    font-weight: 900;
+    letter-spacing: 2px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    z-index: 998;
+}
+
+.restart-button:hover {
+    background-color: $color-orange;
+}
+
+.padding-restart-button {
+    padding-right: calc($spacing*1.5);
+}
+
+/*--------------------------------------------------------------------*/
+/*Padding*/
+.pt {
+    padding-top: $spacing;
+}
+
+.pr {
+    padding-right: $spacing;
+}
+
+.pb {
+    padding-bottom: $spacing;
+}
+
+.pl {
+    padding-left: $spacing;
+}
+/*--------------------------------------*/
+/*half Padding*/
+.pth {
+    padding-top: calc($spacing/2);
+}
+
+.prh {
+    padding-right: calc($spacing/2);
+}
+
+.pbh {
+    padding-bottom: calc($spacing/2);
+}
+
+.plh {
+    padding-left: calc($spacing/2);
+}
+/*--------------------------------------*/
+/*quarter Padding*/
+.ptq {
+    padding-top: calc($spacing/4);
+}
+
+.prq {
+    padding-right: calc($spacing/4);
+}
+
+.pbq {
+    padding-bottom: calc($spacing/4);
+}
+
+.plq {
+    padding-left: calc($spacing/4);
+}
+/*--------------------------------------*/
+/*Double Padding*/
+.pt2 {
+    padding-top: calc($spacing*2);
+}
+
+.pr2 {
+    padding-right: calc($spacing*2);
+}
+
+.pb2 {
+    padding-bottom: calc($spacing*2);
+}
+
+.pl2 {
+    padding-left: calc($spacing*2);
+}
+/*--------------------------------------*/
+/*Triple Padding*/
+.pt3 {
+    padding-top: calc($spacing*3);
+}
+
+.pr3 {
+    padding-right: calc($spacing*3);
+}
+
+.pb3 {
+    padding-bottom: calc($spacing*3);
+}
+
+.pl3 {
+    padding-left: calc($spacing*3);
+}
+/*--------------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------------*/
+/*Alignment*/
+.align-bottom-right {
+    // padding-bottom: $spacing;
+    position: absolute;
+    right: $spacing;
+    bottom: $spacing;
+}
+
+.at {
+    // padding-bottom: $spacing;
+    position: absolute;
+    top: $spacing;
+}
+
+.ar {
+    // padding-bottom: $spacing;
+    position: absolute;
+    right: $spacing;
+}
+
+.ab {
+    // padding-bottom: $spacing;
+    position: absolute;
+    bottom: $spacing;
+}
+
+.al {
+    // padding-bottom: $spacing;
+    position: absolute;
+    left: $spacing;
+}
+/*--------------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------------*/
+/*Pages and Text*/
+.page {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+.half-page {
+    height: 50vh;
+    width: 100vw;
+    position: relative;
+}
+
+.footer {
+    height: 10vh;
+    width: 100vw;
+    position: relative;
+    background-color: $color-dark-grey
 }
 
 .text {
     font-family: 'PPEditorialNew';
-    font-size: 100px;
+    font-size: 4.2vw;
     color: $color-white;
 }
 
-.text-secondary {
+.text-title {
     font-family: 'PPEditorialNew';
-    font-size: 50px;
+    font-size: 4.2vw;
     color: $color-white;
 }
 
-.text-banner {
+.text-mid {
     font-family: 'PPEditorialNew';
-    font-size: 3rem;
+    font-size: 2vw;
+    color: $color-white;
+}
+
+.text-small {
+    font-family: 'PPEditorialNew';
+    font-size: 1.4vw;
     color: $color-white;
 }
 
 .text-paragraph {
     font-family: 'NeueHaasDisplayLight';
-    font-size: 2rem;
+    font-size: 1.4vw;
     color: $color-white;
 }
 
-.first-part {
-    display: flex;
-
-    .left {
-        flex: 1;
-    }
-
-    .right {
-        margin-top: auto;
-        flex: 1;
-        text-align: right;
-    }
+.text-paragraph-small {
+    font-family: 'NeueHaasDisplayLight';
+    font-size: 1vw;
+    color: $color-white;
 }
 
-.second-part {
-    display: flex;
-    .left {
-        flex: 50%;
-        margin-left: auto;
-        margin-top: 18rem;
-    }
-
-    .right {
-        margin-top: auto;
-        flex: 50%;
-        text-align: right;
-    }
-
-    .positive-image {
-        margin: 8rem;
-        max-width: calc(100% - 24rem);
-        object-fit: cover;
-        height: 80dvh;
-        border-radius: 1rem;
-    }
+.text-paragraph-mid {
+    font-family: 'NeueHaasDisplayLight';
+    font-size: 2vw;
+    color: $color-white;
 }
 
-.third-part {
-    margin-top: 50rem;
-    background-color: white;
-    width: 80dvw;
-    height: 80dvh;
+.text-footer {
+    font-family: 'NeueHaasDisplayLight';
+    font-size: 0.8vw;
+    color: $color-white;
 }
 
-.fourth-part {
-    display: flex;
-
-    .left {
-        flex: 1;
-    }
-
-    .right {
-        margin-top: auto;
-        flex: 1;
-        text-align: right;
-    }
+.text-align-right {
+    text-align: right;
 }
 
-.fifth-part {
-    margin-right: 50%;
+.text-align-center {
+    text-align: center;
 }
-
-.ribbon-image {
-    height: 32rem;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
-    border-radius: 1rem;
-}
+/*--------------------------------------------------------------------*/
 
 
-
-/* Scrolling banner stuff */
+/*--------------------------------------------------------------------*/
+/*Scrolling banner*/
 .scrolling-banner {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    white-space: nowrap;
+    // white-space: nowrap;
     width: 100%;
     position: relative;
 }
@@ -123,11 +269,11 @@
 }
 
 .scroll-left {
-    animation: scroll-left 20s linear infinite;
+    animation: scroll-left 30s linear infinite;
 }
 
 .scroll-right {
-    animation: scroll-right 20s linear infinite;
+    animation: scroll-right 30s linear infinite;
 }
 
 @keyframes scroll-left {
@@ -146,4 +292,263 @@
     100% {
         transform: translateX(100%);
     }
+}
+
+.scroll-container {
+    width: 200%; // Doppelte Breite für zwei Sätze von Bildern
+    display: flex;
+    animation: scroll 30s linear infinite;
+}
+
+.scroll-content {
+    display: flex;
+    width: 100%;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%); // Bewegt sich um die Hälfte der Container-Breite
+    }
+}
+
+/*--------------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------------*/
+/*Images*/
+.campfire-image {
+    max-height: 45dvh;
+    object-fit: cover;
+}
+
+.pizza-image {
+    max-height: 36dvh;
+    object-fit: cover;
+}
+
+.grill-image {
+    max-height: 45dvh;
+    object-fit: cover;
+}
+
+.people-image {
+    max-height: 70dvh;
+    object-fit: cover;
+}
+
+.line-image {
+    max-height: 45dvh;
+    object-fit: cover;
+}
+
+.down-image {
+    max-height: 45dvh;
+    object-fit: cover;
+}
+
+.up-image {
+    max-height: 45dvh;
+    object-fit: cover;
+}
+
+.matchstick-image {
+    max-height: 45dvh;
+    object-fit: cover;
+}
+
+.ribbon-image {
+    height: 45dvh;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-radius: 1rem;
+    flex-shrink: 0;
+}
+/*--------------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------------*/
+/*Carousel*/
+.carousel {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.carousel-scroll {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; // Firefox
+    &::-webkit-scrollbar {
+        display: none; // Chrome, Safari, and Opera
+    }
+}
+
+.carousel-start {
+    // flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 50dvh;
+    text-align: center;
+    // overflow: hidden;
+    scroll-snap-align: start;
+    // position: relative;
+    // padding: 20px;
+}
+
+
+.card {
+    flex: 0 0 auto;
+    height: 30vh; // Adjust as needed
+    width: 65vh; // Width is 1.5 times the height
+    margin: 4dvh;
+    overflow: hidden;
+    scroll-snap-align: start;
+    background-color: $color-dark-grey;
+    position: relative;
+    padding: 4dvh;
+    border-radius: 3dvh;
+}
+
+.card-number {
+    position: absolute;
+    top: 2dvh;
+    right: 2dvh;
+    background-color: $color-grey;
+    color: $color-white;
+    padding: 1.5dvh 2dvh;
+    border-radius: 5dvh;
+}
+
+// .card-content {
+//     display: flex;
+//     height: 100%;
+//     flex: 1;
+//     align-items: center;
+//     justify-content: center;
+// }
+
+// .top-row {
+//     flex: 1;
+//     padding-right: 10px;
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: center;
+// }
+
+// .bottom-row {
+//     flex: 1;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+// }
+
+.card-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+/*--------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------------*/
+/*FireAnimation*/
+#canvas-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw; /* Volle Breite des Viewports */
+    height: 100vh; /* Volle Höhe des Viewports */
+    overflow: hidden; /* Verhindert das Überlaufen des Inhalts */
+    z-index: 9999; // Stellt sicher, dass die Flamme über allem anderen liegt
+    pointer-events: none;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+/*--------------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------------*/
+/*Gif*/
+.fire-word {
+    cursor: pointer;
+}
+
+.fire-word:hover {
+    color: $color-orange;
+}
+
+
+.gif-container {
+    position: absolute;
+    /* Passe die Positionierung und Größe nach Bedarf an */
+    pointer-events: none; /* Verhindert, dass das GIF die Mausinteraktion blockiert */
+    z-index: 1000;
+}
+/*--------------------------------------------------------------------*/
+
+.text-scrolling-banner {
+    width: 100%;
+    overflow: hidden;
+    padding: 10px 0;
+    position: relative;
+}
+
+.text-scroll-container {
+    display: flex;
+    width: 200%; // Doppelte Breite für zwei Sätze von Texten
+    white-space: nowrap;
+}
+
+.text-scroll-content {
+    display: flex;
+    width: 100%;
+}
+
+.scroll-item {
+    font-size: 2rem; // Passe die Schriftgröße nach Bedarf an
+    padding: 0 1rem;
+    flex-shrink: 0; // Verhindert das Schrumpfen der Texte
+}
+
+.container-1 {
+    animation: scrollText1 30s linear infinite;
+}
+
+.container-2 {
+    animation: scrollText2 30s linear infinite;
+}
+
+@keyframes scrollText1 {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%); // Bewegt sich um die Hälfte der Container-Breite
+    }
+}
+
+@keyframes scrollText2 {
+    0% {
+        transform: translateX(10%);
+    }
+    100% {
+      transform: translateX(-40%); // Bewegt sich um die Hälfte der Container-Breite, aber leicht versetzt
+    }
+}
+
+  // Optional: Pause animation on hover
+.text-scrolling-banner:hover .text-scroll-container {
+    animation-play-state: paused;
 }

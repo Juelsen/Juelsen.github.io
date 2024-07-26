@@ -8,6 +8,7 @@
 .flex-item-text {
     flex: 40%;
     align-items: center;
+    margin-top: 0px;
 }
 
 .flex-item-image {
@@ -21,7 +22,12 @@
 
 .text {
     font-family: 'PPEditorialNew';
-    font-size: 100px;
+    font-size: 4.2vw;
     color: $color-white;
     margin: 8.75rem;
+}
+
+// Play Button first-page
+.custom-button {
+    font-size: 2vw;
 }

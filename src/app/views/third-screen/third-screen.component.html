@@ -1,89 +1,289 @@
 <div class="wrapper">
+    <div class="pth padding-restart-button ar">
+        <button class="restart-button" 
+        (click)="navigateTofirstScreen()">von vorne<br>starten</button>
+    </div>
+    <div id="canvas-container">
+        <canvas #canvas></canvas>
+    </div>
     <!-- First part -->
-    <div class="first-part item-wrapper">
-        <p class="text left">
-            Das <i>Feuer</i> und der<br>
+    <div class="page">
+        <p class="text pl pt">
+            Das
+            <span class="fire-word" 
+            (mouseenter)="onMouseEnterFire($event)" 
+            (mouseleave)="onMouseLeaveFire()" 
+            (mousemove)="onMouseMoveOverFire($event)">
+            <i>Feuer</i>
+            </span>
+            und der<br>
             dazugehörige <i>Verzehr</i>
         </p>
-        <p class="text-secondary right">- An was denkst du?</p>
+        <div *ngIf="currentGif" class="gif-container" [ngStyle]="{'top.px': gifPosition.y, 'left.px': gifPosition.x}">
+            <img [src]="currentGif" alt="Random GIF" style="max-width: 300px; max-height: 300px;">
+        </div>
+        <img class="down-image pr3 ar ab" src="assets/images/elements/up.png">
+        <p class="text-mid right ab ar">&ndash; an was denkst du?</p>
     </div>
-
-    <!-- Moving Banner -->
-    <div class="scrolling-banner">
-        <div class="text-banner scroll-left">
-            Grillabende — gemütliches Lagerfeuer — Pizza — frisches Brot — Marshmallows — Stockbrot — Camping —
-            knisterndes
-            Feuer — lodernde Flammen — Gelächter
+    <!-- <div class="half-page c3">
+        <div class="scrolling-banner ab">
+            <div class="text-mid scroll-left">
+                <i>Wärme - Grillen - Pizza - Gemütlichkeit - Lagerfeuer - Marshmallows - Backen - Romantik - Kochen - Licht - Barbecue - Stockbrot - Entspannung - Gemüsespieße - Geselligkeit - Würstchen (Vegan) - Feuerzangenbowle - Glut - Flammen - Grillgemüse - Wärmequelle - Räuchern - Beleuchtung - Pizzaofen - Brotbacken - Flambieren - Aufwärmen - Glühwein - Fackeln - Fondue - Feuerschein - Ofenkartoffeln - Holzofen - Gulasch - Suppe - Flammkuchen - Maiskolben - Focaccia - Grillkäse (Vegan)</i>
+            </div>
+            <div class="text-mid scroll-right">
+                <i>Wärme - Grillen - Pizza - Gemütlichkeit - Lagerfeuer - Marshmallows - Backen - Romantik - Kochen - Licht - Barbecue - Stockbrot - Entspannung - Gemüsespieße - Geselligkeit - Würstchen (Vegan) - Feuerzangenbowle - Glut - Flammen - Grillgemüse - Wärmequelle - Räuchern - Beleuchtung - Pizzaofen - Brotbacken - Flambieren - Aufwärmen - Glühwein - Fackeln - Fondue - Feuerschein - Ofenkartoffeln - Holzofen - Gulasch - Suppe - Flammkuchen - Maiskolben - Focaccia - Grillkäse (Vegan)</i>
+            </div>
         </div>
-        <div class="text-banner scroll-right">
-            Grillabende — gemütliches Lagerfeuer — Pizza — frisches Brot — Marshmallows — Stockbrot — Camping —
-            knisterndes
-            Feuer — lodernde Flammen — Gelächter
-        </div>
-    </div>
-
-    <!-- Second part -->
-    <div class="second-part item-wrapper">
-        <div class="left">
-            <p class="text" style="font-style: italic;">Überschrift</p>
-            <p class="text-paragraph">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Die Entdeckung des
-                Feuers war für uns Menschen eine der wichtigsten Errungenschaften. Es ermöglichte uns ganz
-                neue Wege. Sei es zum Schutz vor wilden Tieren oder zum verarbeiten von Lebensmitteln und weiteren
-                Rohstoffen.
-                Feuer ist heut zu Tage nicht mehr weg zu denken. Wir sind davon abhängig. Ohne Feuer könnten wir nicht
-                mehr
-                leben. Und vor allem viele Dinge die wir lieben nicht mehr verzehren.
-                Die Entdeckung des Feuers war für uns Menschen eine der wichtigsten Errungenschaften. Es ermöglichte uns
-                ganz
-                neue Wege. Sei es zum Schutz vor wilden Tieren oder zum verarbeiten von Lebensmitteln und weiteren
-                Rohstoffen.
-                Feuer ist heut zu Tage nicht mehr weg zu denken. Wir sind davon abhängig. Ohne Feuer könnten wir nicht
-                mehr
-                leben. Und vor allem viele Dinge die wir lieben nicht mehr verzehren.
-            </p>
-        </div>
-        <div class="right">
-            <img class="positive-image" src="assets/images/positive_image.png">
+    </div> -->
+    <div class="half-page">
+        <div class="text-scrolling-banner">
+            <div class="text-scroll-container container-1">
+                <div class="text-mid text-scroll-content">
+                    <i>Wärme - Grillen - Pizza - Gemütlichkeit - Lagerfeuer - Marshmallows - Backen - Romantik - Kochen - Licht - Barbecue - Stockbrot - Entspannung - Gemüsespieße - Geselligkeit - Würstchen (Vegan) - Feuerzangenbowle - Glut - Flammen - Grillgemüse - Wärmequelle - Räuchern - Beleuchtung - Pizzaofen - Brotbacken - Flambieren - Aufwärmen - Glühwein - Fackeln - Fondue - Feuerschein - Ofenkartoffeln - Holzofen - Gulasch - Suppe - Flammkuchen - Maiskolben - Focaccia - Grillkäse (Vegan)</i>
+                    <i>Wärme - Grillen - Pizza - Gemütlichkeit - Lagerfeuer - Marshmallows - Backen - Romantik - Kochen - Licht - Barbecue - Stockbrot - Entspannung - Gemüsespieße - Geselligkeit - Würstchen (Vegan) - Feuerzangenbowle - Glut - Flammen - Grillgemüse - Wärmequelle - Räuchern - Beleuchtung - Pizzaofen - Brotbacken - Flambieren - Aufwärmen - Glühwein - Fackeln - Fondue - Feuerschein - Ofenkartoffeln - Holzofen - Gulasch - Suppe - Flammkuchen - Maiskolben - Focaccia - Grillkäse (Vegan)</i>
+                    <!-- Dupliziere den Textinhalt -->
+                    <i>Wärme - Grillen - Pizza - Gemütlichkeit - Lagerfeuer - Marshmallows - Backen - Romantik - Kochen - Licht - Barbecue - Stockbrot - Entspannung - Gemüsespieße - Geselligkeit - Würstchen (Vegan) - Feuerzangenbowle - Glut - Flammen - Grillgemüse - Wärmequelle - Räuchern - Beleuchtung - Pizzaofen - Brotbacken - Flambieren - Aufwärmen - Glühwein - Fackeln - Fondue - Feuerschein - Ofenkartoffeln - Holzofen - Gulasch - Suppe - Flammkuchen - Maiskolben - Focaccia - Grillkäse (Vegan)</i>
+                    <i>Wärme - Grillen - Pizza - Gemütlichkeit - Lagerfeuer - Marshmallows - Backen - Romantik - Kochen - Licht - Barbecue - Stockbrot - Entspannung - Gemüsespieße - Geselligkeit - Würstchen (Vegan) - Feuerzangenbowle - Glut - Flammen - Grillgemüse - Wärmequelle - Räuchern - Beleuchtung - Pizzaofen - Brotbacken - Flambieren - Aufwärmen - Glühwein - Fackeln - Fondue - Feuerschein - Ofenkartoffeln - Holzofen - Gulasch - Suppe - Flammkuchen - Maiskolben - Focaccia - Grillkäse (Vegan)</i>
+                </div>
+            </div>
+            <div class="text-scroll-container container-2">
+                <div class="text-mid text-scroll-content pth">
+                    <i>Wärme - Grillen - Pizza - Gemütlichkeit - Lagerfeuer - Marshmallows - Backen - Romantik - Kochen - Licht - Barbecue - Stockbrot - Entspannung - Gemüsespieße - Geselligkeit - Würstchen (Vegan) - Feuerzangenbowle - Glut - Flammen - Grillgemüse - Wärmequelle - Räuchern - Beleuchtung - Pizzaofen - Brotbacken - Flambieren - Aufwärmen - Glühwein - Fackeln - Fondue - Feuerschein - Ofenkartoffeln - Holzofen - Gulasch - Suppe - Flammkuchen - Maiskolben - Focaccia - Grillkäse (Vegan)</i>
+                    <i>Wärme - Grillen - Pizza - Gemütlichkeit - Lagerfeuer - Marshmallows - Backen - Romantik - Kochen - Licht - Barbecue - Stockbrot - Entspannung - Gemüsespieße - Geselligkeit - Würstchen (Vegan) - Feuerzangenbowle - Glut - Flammen - Grillgemüse - Wärmequelle - Räuchern - Beleuchtung - Pizzaofen - Brotbacken - Flambieren - Aufwärmen - Glühwein - Fackeln - Fondue - Feuerschein - Ofenkartoffeln - Holzofen - Gulasch - Suppe - Flammkuchen - Maiskolben - Focaccia - Grillkäse (Vegan)</i>
+                    <!-- Dupliziere den Textinhalt -->
+                    <i>Wärme - Grillen - Pizza - Gemütlichkeit - Lagerfeuer - Marshmallows - Backen - Romantik - Kochen - Licht - Barbecue - Stockbrot - Entspannung - Gemüsespieße - Geselligkeit - Würstchen (Vegan) - Feuerzangenbowle - Glut - Flammen - Grillgemüse - Wärmequelle - Räuchern - Beleuchtung - Pizzaofen - Brotbacken - Flambieren - Aufwärmen - Glühwein - Fackeln - Fondue - Feuerschein - Ofenkartoffeln - Holzofen - Gulasch - Suppe - Flammkuchen - Maiskolben - Focaccia - Grillkäse (Vegan)</i>
+                    <i>Wärme - Grillen - Pizza - Gemütlichkeit - Lagerfeuer - Marshmallows - Backen - Romantik - Kochen - Licht - Barbecue - Stockbrot - Entspannung - Gemüsespieße - Geselligkeit - Würstchen (Vegan) - Feuerzangenbowle - Glut - Flammen - Grillgemüse - Wärmequelle - Räuchern - Beleuchtung - Pizzaofen - Brotbacken - Flambieren - Aufwärmen - Glühwein - Fackeln - Fondue - Feuerschein - Ofenkartoffeln - Holzofen - Gulasch - Suppe - Flammkuchen - Maiskolben - Focaccia - Grillkäse (Vegan)</i>
+                </div>
+            </div>
         </div>
     </div>
-
-    <!-- Third part (Platzhalter) -->
-    <div class="third-part item-wrapper"></div>
-
-    <!-- Fourth part -->
-    <div class="fourth-part item-wrapper">
-        <p class="text left">
-            Aber <i>Feuer</i> und <i>Verzehr</i> bedeutet<br>
+    <div class="page c1">
+        <div *ngIf="currentGif" class="gif-container" [ngStyle]="{'top.px': gifPosition.y, 'left.px': gifPosition.x}">
+            <img [src]="currentGif" alt="Random GIF" style="max-width: 300px; max-height: 300px;">
+        </div>
+        <p class="text pl3 pt2">
+            <span class="fire-word" 
+            (mouseenter)="onMouseEnterFire($event)" 
+            (mouseleave)="onMouseLeaveFire()" 
+            (mousemove)="onMouseMoveOverFire($event)">
+            <i>Feuer</i>
+            </span> als Schlüssel<br>
+            zum Genuss
+        </p>
+        <p class="text-paragraph pl3 pth">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Die Entdeckung des
+            <span class="fire-word" 
+            (mouseenter)="onMouseEnterFire($event)" 
+            (mouseleave)="onMouseLeaveFire()" 
+            (mousemove)="onMouseMoveOverFire($event)">
+            Feuers
+            </span>  war für uns Menschen eine der<br> wichtigsten Errungenschaften. Es ermöglichte uns ganz
+            neue<br>Wege. Sei es zum Schutz vor wilden Tieren oder zum verarbeiten<br>von Lebensmitteln und weiteren
+            Rohstoffen. <span class="fire-word" 
+            (mouseenter)="onMouseEnterFire($event)" 
+            (mouseleave)="onMouseLeaveFire()" 
+            (mousemove)="onMouseMoveOverFire($event)">
+            Feuer
+            </span> ist heutzutage<br>nicht mehr wegzudenken. Wir sind davon abhängig. Ohne <span class="fire-word" 
+            (mouseenter)="onMouseEnterFire($event)" 
+            (mouseleave)="onMouseLeaveFire()" 
+            (mousemove)="onMouseMoveOverFire($event)">
+            Feuer
+            </span><br>könnten wir nicht
+            mehr leben. Und vor allem viele Dinge die wir<br>lieben nicht mehr verzehren.
+        </p>
+        <img class="campfire-image ab ar" src="assets/images/thirdScreen/campfire.png">
+    </div>
+    <div class="page c2">
+        <img class="pizza-image pl2 pt" src="assets/images/thirdScreen/pizza.png">
+        <img class="grill-image pr2 ab ar" src="assets/images/thirdScreen/grill.png">
+    </div>
+    <div class="page c1">
+        <img class="people-image pl3 pt" src="assets/images/thirdScreen/people.png">
+    </div>
+    <div class="half-page c2">
+    </div>
+    <div class="page c1">
+        <p class="text pl pt2">
+            Aber <span class="fire-word" 
+            (mouseenter)="onMouseEnterFire($event)" 
+            (mouseleave)="onMouseLeaveFire()" 
+            (mousemove)="onMouseMoveOverFire($event)">
+            <i>Feuer</i>
+            </span>  und <i>Verzehr</i> bedeutet<br>
             noch so viel mehr, als das an was du<br>
             gerade denkst..
         </p>
-        <p class="text-secondary right">Doch viele von uns haben dieses Wissen vergessen, ignorieren es oder ziehen sich
-            absichtlich aus der Verantwortung!</p>
+        <div *ngIf="currentGif" class="gif-container" [ngStyle]="{'top.px': gifPosition.y, 'left.px': gifPosition.x}">
+            <img [src]="currentGif" alt="Random GIF" style="max-width: 300px; max-height: 300px;">
+        </div>
+        <p class="text-mid text-align-right ab ar">
+            <i>Doch viele von uns haben dieses Wissen<br>
+            vergessen, ignorieren es oder ziehen sich<br>
+            absichtlich aus der Verantwortung!</i>
+        </p>
     </div>
-
-    <!-- Fifth part -->
-    <div class="fifth-part item-wrapper">
-        <div>
-            <p class="text" style="font-style: italic;">Denn das ist an was du eigentlich denken solltest:</p>
-            <p class="text-paragraph">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Lorem ipsum dolor
-                sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-                dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-                Stet
-                clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-                amet,
-                consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.
-            </p>
+    <div class="half-page c3">
+        <img class="line-image ar" src="assets/images/elements/line.png">
+    </div>
+    <div class="half-page c2">
+        <p class="text text-align-center pbq">
+            <i>Denn das ist an was du<br>
+            eigentlich denken solltest:</i>
+        </p>
+        <p class="text-paragraph-mid text-align-center pth">
+            Zerstörung. Unkontrollierbare Kraft. Lebensgefährlich.
+        </p>
+        <p class="text-paragraph text-align-center ptq">
+            <span class="fire-word" 
+            (mouseenter)="onMouseEnterFire($event)" 
+            (mouseleave)="onMouseLeaveFire()" 
+            (mousemove)="onMouseMoveOverFire($event)">
+            Feuer
+            </span> kann weit mehr als nur Wärme und Genuss bieten. Wenn es außer Kontrolle gerät, kann
+            <br>es katastrophale Schäden verursachen und Leben in Gefahr bringen.
+        </p>
+        <div *ngIf="currentGif" class="gif-container" [ngStyle]="{'top.px': gifPosition.y, 'left.px': gifPosition.x}">
+            <img [src]="currentGif" alt="Random GIF" style="max-width: 300px; max-height: 300px;">
         </div>
     </div>
-
-    <!-- Picture ribbon -->
-    <div class="scrolling-banner">
-        <div class="text-banner scroll-left">
-            <img class="ribbon-image" src="assets/images/negative_1.png">
-            <img class="ribbon-image" src="assets/images/negative_2.png">
-            <img class="ribbon-image" src="assets/images/negative_3.png">
-            <img class="ribbon-image" src="assets/images/negative_4.png">
-            <img class="ribbon-image" src="assets/images/negative_5.png">
+    <!-- <div class="half-page c1">
+        <div class="scrolling-banner">
+            <div class="text-banner scroll-left">
+                <img class="ribbon-image" src="assets/images/negative_1.png">
+                <img class="ribbon-image" src="assets/images/negative_2.png">
+                <img class="ribbon-image" src="assets/images/negative_3.png">
+                <img class="ribbon-image" src="assets/images/negative_4.png">
+                <img class="ribbon-image" src="assets/images/negative_5.png">
+            </div>
         </div>
+    </div> -->
+    <div class="half-page c1">
+        <div class="scrolling-banner">
+            <div class="scroll-container">
+                <div class="scroll-content">
+                <!-- Erste Gruppe von Bildern -->
+                <img class="ribbon-image" src="assets/images/negative_1.png">
+                <img class="ribbon-image" src="assets/images/negative_2.png">
+                <img class="ribbon-image" src="assets/images/negative_3.png">
+                <img class="ribbon-image" src="assets/images/negative_4.png">
+                <img class="ribbon-image" src="assets/images/negative_5.png">
+                
+                <!-- Zweite Gruppe von Bildern (Duplikate) -->
+                <img class="ribbon-image" src="assets/images/negative_1.png">
+                <img class="ribbon-image" src="assets/images/negative_2.png">
+                <img class="ribbon-image" src="assets/images/negative_3.png">
+                <img class="ribbon-image" src="assets/images/negative_4.png">
+                <img class="ribbon-image" src="assets/images/negative_5.png">
+                </div>
+            </div>
+            </div>
+    </div>
+    <div class="half-page c3">
+        <img class="matchstick-image prh pt ar" src="assets/images/elements/matchstick.png">
+    </div>
+    <div class="half-page c1">
+        <div *ngIf="currentGif" class="gif-container" [ngStyle]="{'top.px': gifPosition.y, 'left.px': gifPosition.x}">
+            <img [src]="currentGif" alt="Random GIF" style="max-width: 300px; max-height: 300px;">
+        </div>
+        <p class="text pl">
+            Wenn du schon <span class="fire-word" 
+            (mouseenter)="onMouseEnterFire($event)" 
+            (mouseleave)="onMouseLeaveFire()" 
+            (mousemove)="onMouseMoveOverFire($event)">
+            <i>Feuer</i>
+            </span>  machst,<br>
+            dann machs auch richtig!
+        </p>
+        <div *ngIf="currentGif" class="gif-container" [ngStyle]="{'top.px': gifPosition.y, 'left.px': gifPosition.x}">
+            <img [src]="currentGif" alt="Random GIF" style="max-width: 300px; max-height: 300px;">
+        </div>
+        <p class="text-paragraph pl pth">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+            Entdecke die verschiedenen Methoden, mit denen<br>
+            Menschen <span class="fire-word" 
+            (mouseenter)="onMouseEnterFire($event)" 
+            (mouseleave)="onMouseLeaveFire()" 
+            (mousemove)="onMouseMoveOverFire($event)">
+            Feuer
+            </span> gemacht haben. Vom Feuerbohren über<br>
+            Funkenbildung mit Feuersteinen und Pyrit bis hin zur Nutzung<br>
+            von Reibung. Diese Techniken zeigen, wie unsere Vorfahren<br>
+            <span class="fire-word" 
+            (mouseenter)="onMouseEnterFire($event)" 
+            (mouseleave)="onMouseLeaveFire()" 
+            (mousemove)="onMouseMoveOverFire($event)">
+            Feuer
+            </span> entfachten und damit das Überleben sicherten.
+        </p>
+    </div>
+    <div class="half-page c2">
+        <div class="carousel ">
+            <div class="carousel-scroll">
+                <div *ngFor="let method of fireMethods; let i = index">
+                    <ng-container *ngIf="i === 0; else cardTemplate">
+                        <div class="carousel-start">
+                            <p class="text-small">Swipe durch<br><i>lodernde</i> Techniken!</p>
+                        </div>
+                    </ng-container>
+                    <ng-template #cardTemplate>
+                        <div class="card">
+                            <div class="text-paragraph card-number">{{i}}/7</div>
+                            <div class="card-content plq prq">
+                                <div class="top-row">
+                                    <p class="text-mid ptq pbh"><i>{{method.title}}</i></p>
+                                </div>
+                                <div class="bottom-row">
+                                    <p class="text-paragraph-small">{{method.description}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page c1">
+        <p class="text-small pl2 pt3"> 
+            <span class="fire-word" 
+            (mouseenter)="onMouseEnterFire($event)" 
+            (mouseleave)="onMouseLeaveFire()" 
+            (mousemove)="onMouseMoveOverFire($event)">
+            <i>Feuer</i>
+            </span> ist nicht nur ein Element, sondern ein wahrer Alltagsheld.<br>
+            Vom alltäglichen Feuerzeug bis zur grundlegenden Rolle des<br>
+            <span class="fire-word" 
+            (mouseenter)="onMouseEnterFire($event)" 
+            (mouseleave)="onMouseLeaveFire()" 
+            (mousemove)="onMouseMoveOverFire($event)">
+            <i>Feuer</i>
+            </span>  in der menschlichen Zivilisation – es prägt unser Leben<br> 
+            auf vielfache Weise. Während wir uns mit den verschiedenen<br>
+            Methoden zur Feuererzeugung und den damit verbundenen Risi-<br>
+            ken auseinander-setzen, wird klar, wie zentral <span class="fire-word" 
+            (mouseenter)="onMouseEnterFire($event)" 
+            (mouseleave)="onMouseLeaveFire()" 
+            (mousemove)="onMouseMoveOverFire($event)">
+            <i>Feuer</i>
+            </span>  für unsere<br> 
+            Vergangenheit, Gegenwart und Zukunft ist. Es spendet Wärme und<br>
+            Licht und bereichert unser Leben mit Genuss, birgt jedoch auch<br>
+            die Gefahr von Zerstörung und Unkontrollierbarkeit.<br>
+        </p>
+        <div *ngIf="currentGif" class="gif-container" [ngStyle]="{'top.px': gifPosition.y, 'left.px': gifPosition.x}">
+            <img [src]="currentGif" alt="Random GIF" style="max-width: 300px; max-height: 300px;">
+        </div>
+        <p class="text-small pl3 pth"> 
+            Diese doppelte Natur des <span class="fire-word" 
+            (mouseenter)="onMouseEnterFire($event)" 
+            (mouseleave)="onMouseLeaveFire()" 
+            (mousemove)="onMouseMoveOverFire($event)">
+            <i>Feuers</i>
+            </span> – als eine Quelle des<br>
+            Lebens und potenzielle Bedrohung – macht es für mich<br>
+            zu einem unverzichtbaren Alltagshelden.
+        </p>
+    </div>
+    <div class="footer">
+        <p class="text-footer text-align-center ptq"> Thema: Dein*e Alltagsheld*in   |   gestaltet, entworfen und programmiert: Julian Sabo   |   2.Semester   |   Kommunikationsdesign   |   HTWG Konstanz
+        </p>
     </div>
 </div>

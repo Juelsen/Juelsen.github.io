@@ -1,12 +1,17 @@
 $color-orange: #FFA726;
 $color-white: #FAFAFA;
 $color-grey: #222222;
+$color-dark-grey: #333333;
 $color-black: #101010;
 
-body {
+* {
     margin: 0;
     padding: 0;
+}
+
+body {
     background-color: $color-black;
+
 }
 
 @font-face {

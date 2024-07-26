@@ -1,9 +1,10 @@
 @import '../../../styles.scss';
 
 .wrapper {
-    margin: 8.75rem;
+    margin: 4.75rem;
     display: flex;
-    height: calc(100dvh - 17.5rem);
+    height: calc(100dvh - 9.5rem);
+    // height: calc(100dvh - 17.5rem);
 }
 
 .flex-item {
@@ -12,13 +13,18 @@
 
 .text-wrapper {
     margin-top: auto;
-    margin-bottom: 10rem;
+    margin-bottom: 6rem;
 }
 
 .text {
     font-family: 'NeueHaasDisplayLight';
-    font-size: 2rem;
+    font-size: 1.4vw;
     color: $color-white;
+    padding-bottom: 2vw;
+}
+
+.custom-button {
+    font-size: 1.5vw;
 }
 
 .countdown-wrapper {

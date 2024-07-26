@@ -1,0 +1,10 @@
+fireMethods = [
+    { title: '', description: '', imageUrl: '' },
+    { title: 'Feuerbohren', description: 'Handbohrer und Bogenbohrer sind die Hauptmethoden beim Feuerbohren. Beim Handbohrer wird ein Holzstab zwischen den Händen gedreht und gegen ein Brett gedrückt, wodurch Reibung entsteht.Beim Bogenbohrer wird ein Bogen mit einer Schnur verwendet, um den Stab schneller zu drehen. Die Reibung erzeugt Hitze, die trockenen Zunder entzündet und somit Feuer erzeugt.', imageUrl: 'assets/friction.jpg' },
+    { title: 'Feuersteinschlagen', description: 'Nutzung von gebündeltem Sonnenlicht zur Entzündung von Zunder.', imageUrl: 'assets/magnifying-glass.jpg' },
+    { title: 'Feuerpflug', description: 'Einfache und schnelle Methode mit einem Feuerzeug oder Streichhölzern.', imageUrl: 'assets/lighter.jpg' },
+    { title: 'Feuerzeug des Mittelalters', description: 'Zuverlässige Methode, die auch bei Nässe funktioniert.', imageUrl: 'assets/firestarter.jpg' },
+    { title: 'Streichhölzer', description: 'Improvisierte Methode unter Verwendung einer Batterie und Stahlwolle.', imageUrl: 'assets/battery-steel-wool.jpg' },
+    { title: 'Mechanische Feuerzeuge', description: 'Alte Methode, bei der ein Bogen zur Erzeugung von Reibung verwendet wird.', imageUrl: 'assets/fire-bow.jpg' },
+    { title: 'Moderne Feuerzeuge', description: 'Nutzung chemischer Reaktionen zur Erzeugung von Hitze und Flammen.', imageUrl: 'assets/chemical-reaction.jpg' },
+  ];

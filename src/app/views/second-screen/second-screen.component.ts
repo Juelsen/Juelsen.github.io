@@ -13,13 +13,13 @@ export class SecondScreenComponent implements OnInit {
   private router = inject(Router);
   private readonly COUNTDOWN_SECONDS = 20;
 
-  private timer$ = interval(1000).pipe(take(this.COUNTDOWN_SECONDS + 1));
-  private countdown$ = this.timer$.pipe(map(n => this.COUNTDOWN_SECONDS - n), finalize(() => this.SOUND.pause()));
+  private timer$ = interval(1000).pipe(take(this.COUNTDOWN_SECONDS));
+  private countdown$ = this.timer$.pipe(map(n => (this.COUNTDOWN_SECONDS-1) - n), finalize(() => this.SOUND.pause()));
 
   countdownSig = toSignal<number, number>(this.countdown$, { initialValue: this.COUNTDOWN_SECONDS });
 
   private readonly SOUND = new Howl({
-    src: ['assets/audio/intro_audio.wav'],
+    src: ['assets/audio/soundFireWebsite.mp3'],
   });
 
   ngOnInit(): void {

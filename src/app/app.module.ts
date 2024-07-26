@@ -7,6 +7,7 @@ import { FirstScreenComponent } from './views/first-screen/first-screen.componen
 import { SecondScreenComponent } from './views/second-screen/second-screen.component';
 import { ThirdScreenComponent } from './views/third-screen/third-screen.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
